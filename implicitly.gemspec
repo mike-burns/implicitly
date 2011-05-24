@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name               = "implicitly"
-  s.version            = "0.0.1"
+  s.version            = "0.0.2"
   s.authors            = ["Mike Burns"]
   s.summary            = %q{Wrap class instances implicitly}
   s.description        = %q{A port of Scala's implicits, this is an alternative to open classes that allows for easier testing.}
   s.email              = %q{mburns@thoughtbot.com}
-  s.files              = ["README.rdoc", "Rakefile", "lib/implicitly.rb"]
+  s.files              = ["README.rdoc", "LICENSE", "Rakefile", "lib/implicitly.rb"]
   s.test_files         = ["test/test_implicitly.rb"]
   s.homepage           = %q{http://rubygems.org/gems/implicitly}
   s.require_paths      = ["lib"]
