@@ -1,0 +1,50 @@
+= Synopsis
+
+Implicits in Ruby, based on Scala. Works like:
+
+    implicitly.from(BaseClass).to(WrapperClass).via do |base_object|
+      WrapperClass.new(base_object)
+    end
+
+= Example
+
+For example, to extend Fixnum with #seconds, #minutes, and #hours:
+
+    class FixnumWithTime
+      def initialize(n)
+        @n = n
+      end
+    
+      def minutes
+        seconds * 60
+      end
+    
+      def hours
+        minutes * 60
+      end
+    
+      def seconds
+        @n
+      end
+    end
+
+    class Person
+      implicitly.from(Fixnum).to(FixnumWithTime).via do |fixnum|
+        FixnumWithTime.new(fixnum)
+      end
+
+      def age_in_seconds
+        37.minutes
+      end
+    end
+
+= Why
+
+By using a wrapping class the extension can be tested independently of the base
+class.
+
+= Author
+
+Mike Burns
+mburns@thoughtbot.com
+http://mike-burns.com/
